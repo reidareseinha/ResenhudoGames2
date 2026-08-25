@@ -3,18 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Início - Sala de Aula</title>
+<title>Início - ResenhudoGames</title>
 <link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;600;700&display=swap" rel="stylesheet">
+
 <style>
 :root{--background:#050506;--card:#100b1c;--foreground:#f4f0f7;--muted:#aaa0b3;--primary:#a020f0;--primary-light:#c45cff;--border:rgba(160,32,240,.25)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;min-height:100%;background:radial-gradient(circle at 50% -20%,rgba(160,32,240,.16),transparent 45%),var(--background);color:var(--foreground);font-family:Inter,sans-serif}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px}
+
 header{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 32px;background:rgba(5,5,8,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(160,32,240,.2);z-index:100}
 .logo{color:var(--primary-light);font-family:Orbitron,sans-serif;font-size:20px;font-weight:700;letter-spacing:.12em;text-shadow:0 0 5px var(--primary),0 0 10px var(--primary),0 0 20px var(--primary-light);white-space:nowrap}
 .header-actions{display:flex;align-items:center;gap:10px}
@@ -22,12 +24,12 @@ header{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:
 .search-icon{position:absolute;left:11px;color:var(--primary-light);pointer-events:none;font-size:18px}
 #searchInput{width:220px;height:38px;padding:0 12px 0 34px;border:1px solid var(--border);border-radius:8px;outline:0;background:rgba(16,11,28,.9);color:#fff;font-family:Inter,sans-serif}
 #searchInput:focus{border-color:var(--primary-light);box-shadow:0 0 12px rgba(160,32,240,.15)}
-.home-button{height:38px;padding:0 14px;border:1px solid var(--border);border-radius:8px;background:rgba(16,11,28,.9);color:var(--primary-light);cursor:pointer;font-family:Inter,sans-serif;font-size:13px;display:flex;align-items:center;gap:6px;transition:all .2s}
-.home-button:hover{background:var(--primary);color:#fff;border-color:var(--primary-light)}
+
 main{width:min(1152px,calc(100% - 32px));margin:0 auto;padding:96px 0 50px;position:relative;z-index:2}
 .page-title{margin:0 0 20px;font-family:Orbitron,sans-serif;font-size:28px}
 .comments-tab{display:inline-flex;align-items:center;gap:8px;margin:0 0 24px;padding:10px 16px;width:fit-content;text-decoration:none;color:var(--primary-light);background:rgba(16,11,28,.7);border:1px solid var(--border);border-radius:8px;font-family:Orbitron,sans-serif;font-size:12px;font-weight:700}
 .comments-tab:hover{border-color:rgba(196,92,255,.7);background:rgba(160,32,240,.15)}
+
 .games-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:22px;align-items:stretch}
 .game-card{cursor:pointer;display:flex;flex-direction:column;width:100%;min-width:0;height:100%;overflow:hidden;color:var(--foreground);text-decoration:none;background:rgba(16,11,28,.9);border:1px solid var(--border);border-radius:10px;transition:transform .2s,border-color .2s,box-shadow .2s}
 .game-card:hover{transform:translateY(-4px);border-color:rgba(196,92,255,.7);box-shadow:0 0 20px rgba(160,32,240,.18)}
@@ -41,18 +43,14 @@ main{width:min(1152px,calc(100% - 32px));margin:0 auto;padding:96px 0 50px;posit
 .play-button{margin-top:12px;padding:9px;text-align:center;border-radius:6px;background:rgba(160,32,240,.15);border:1px solid rgba(160,32,240,.4);color:var(--primary-light);font-family:Orbitron,sans-serif;font-size:11px;font-weight:700}
 .game-card:hover .play-button{background:var(--primary);color:#fff}
 .no-results{display:none;margin-top:20px;padding:18px;color:var(--muted);text-align:center;border:1px solid var(--border);border-radius:8px;background:rgba(16,11,28,.7)}
-.top-games-section{margin-top:0;margin-bottom:40px}
-.top-games-section .section-title{font-family:Orbitron,sans-serif;font-size:24px;margin-bottom:20px;color:var(--primary-light);display:flex;align-items:center;gap:10px}
-.top-games-section .section-title::after{content:"";flex:1;height:1px;background:var(--border)}
-.catalogo-section{margin-top:40px}
-.catalogo-section .catalogo-title{font-family:Orbitron,sans-serif;font-size:24px;margin-bottom:20px;color:var(--foreground);display:flex;align-items:center;gap:10px}
-.catalogo-section .catalogo-title::after{content:"";flex:1;height:1px;background:var(--border)}
+
 .credits,.comments-section{margin-top:55px;padding-top:28px;border-top:1px solid rgba(160,32,240,.2)}
 .credits-title,.comments-title{margin:0 0 18px;font-family:Orbitron,sans-serif;font-size:20px}
 .credits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
 .credit{padding:14px;background:rgba(16,11,28,.7);border:1px solid var(--border);border-radius:8px}
 .credit-game{margin:0 0 5px;font-weight:600}
 .credit-author{margin:0;color:var(--muted);font-size:13px}
+
 .comments-form{display:grid;gap:10px;margin-bottom:24px}
 .comments-form input,.comments-form textarea{width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:7px;outline:0;background:rgba(16,11,28,.9);color:#fff;font-family:Inter,sans-serif}
 .comments-form textarea{min-height:100px;resize:vertical}
@@ -64,6 +62,7 @@ main{width:min(1152px,calc(100% - 32px));margin:0 auto;padding:96px 0 50px;posit
 .comment{padding:14px;background:rgba(16,11,28,.7);border:1px solid var(--border);border-radius:8px}
 .comment-name{margin:0 0 6px;font-weight:700;color:#fff}
 .comment-text{margin:0;color:var(--muted);font-size:13px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere}
+
 #gameOverlay{display:none;position:fixed;inset:0;z-index:999999;background:#000}
 #gameOverlay.active{display:flex;flex-direction:column}
 #gameTopbar{min-height:58px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 14px;background:rgba(5,5,8,.98);border-bottom:1px solid rgba(160,32,240,.5);color:#fff;flex-shrink:0}
@@ -74,41 +73,32 @@ main{width:min(1152px,calc(100% - 32px));margin:0 auto;padding:96px 0 50px;posit
 #gameContainer{position:relative;flex:1;min-height:0;background:#000}
 #gameFrame{width:100%;height:100%;display:block;border:0;background:#000}
 #gameFrame:fullscreen{width:100vw;height:100vh;background:#000}
-#guestOverlay{display:none;position:fixed;inset:0;z-index:1000001;background:#fff;flex-direction:column}
-#guestOverlay.active{display:flex}
-#guestTopbar{min-height:58px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 14px;background:#f1f1f1;border-bottom:1px solid #ccc;color:#333;flex-shrink:0}
-#guestTitle{font-family:Inter,sans-serif;font-size:15px;font-weight:600;color:#333}
-#guestButtons{display:flex;gap:8px;flex-shrink:0}
-#guestButtons button{border:1px solid #ccc;border-radius:6px;padding:8px 12px;background:#fff;color:#333;cursor:pointer;font-family:Inter,sans-serif;font-size:13px;transition:all .2s}
-#guestButtons button:hover{background:#e0e0e0}
-#guestContainer{flex:1;display:flex;flex-direction:column;background:#fff;position:relative}
-#guestSearchForm{display:flex;gap:10px;padding:10px;background:#f1f1f1;border-bottom:1px solid #ccc;flex-shrink:0;align-items:center}
-#guestSearchForm input{flex:1;padding:8px 12px;border:1px solid #ccc;border-radius:4px;outline:none;font-size:14px;color:#333}
-#guestSearchForm input:focus{border-color:var(--primary-light)}
-#guestSearchForm button{padding:8px 16px;background:var(--primary);color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px}
-#guestSearchForm button:hover{background:var(--primary-light)}
-#guestSearchForm .newtab-btn{padding:8px 14px;background:#f1f1f1;color:#333;border:1px solid #ccc;border-radius:4px;cursor:pointer;font-size:14px}
-#guestSearchForm .newtab-btn:hover{background:#ddd}
-#guestFrame{width:100%;flex:1;border:none;background:#fff}
-#progressConflictModal{display:none;position:fixed;inset:0;z-index:1000002;background:rgba(0,0,0,.85);align-items:center;justify-content:center;padding:20px}
-#progressConflictModal.active{display:flex}
-#progressConflictModal .modal-box{background:#0d0912;border:1px solid rgba(160,32,240,.45);border-radius:12px;padding:24px;max-width:450px;width:100%}
-#progressConflictModal .modal-box h2{font-family:Orbitron,sans-serif;color:var(--primary-light);font-size:20px;margin-bottom:10px}
-#progressConflictModal .modal-box .desc{color:var(--muted);font-size:14px;margin-bottom:18px}
-#progressConflictModal .progress-info{background:rgba(16,11,28,.7);padding:12px;border-radius:8px;border:1px solid var(--border);margin-bottom:12px}
-#progressConflictModal .progress-info strong{display:block;margin-bottom:4px}
-#progressConflictModal .progress-info .details{color:var(--muted);font-size:13px;margin-top:4px}
-#progressConflictModal .progress-info .timestamp{color:#666;font-size:11px}
-#progressConflictModal .actions{display:flex;gap:10px;flex-wrap:wrap}
-#progressConflictModal .actions button{flex:1;padding:10px;border-radius:7px;cursor:pointer;font-family:Orbitron,sans-serif;font-size:11px;font-weight:700}
-#progressConflictModal .actions .local-btn{border:1px solid var(--border);background:rgba(160,32,240,.15);color:var(--primary-light)}
-#progressConflictModal .actions .local-btn:hover{background:var(--primary);color:#fff}
-#progressConflictModal .actions .cloud-btn{border:1px solid #00ff88;background:rgba(0,255,136,.1);color:#00ff88}
-#progressConflictModal .actions .cloud-btn:hover{background:#00ff88;color:#000}
-@media(max-width:1100px){.games-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media(max-width:850px){.games-grid{grid-template-columns:repeat(3,minmax(0,1fr))}#searchInput{width:170px}}
-@media(max-width:700px){header{padding:0 16px}.games-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.game-cover{height:160px}main{width:calc(100% - 20px)}.logo{font-size:16px}#searchInput{width:150px}}
-@media(max-width:500px){main{padding-top:88px}.game-cover{height:145px}.game-name{font-size:13px}.game-description{font-size:11px}#gameTopbar{flex-wrap:wrap}#gameButtons{width:100%;justify-content:flex-end}#searchInput{width:min(160px,45vw)}#guestTopbar{flex-wrap:wrap}#guestButtons{width:100%;justify-content:flex-end}#guestSearchForm{flex-wrap:wrap}}
+
+@media(max-width:1100px){
+.games-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media(max-width:850px){
+.games-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+#searchInput{width:170px}
+}
+@media(max-width:700px){
+header{padding:0 16px}
+.games-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.game-cover{height:160px}
+main{width:calc(100% - 20px)}
+.logo{font-size:16px}
+#searchInput{width:150px}
+}
+@media(max-width:500px){
+main{padding-top:88px}
+.game-cover{height:145px}
+.game-name{font-size:13px}
+.game-description{font-size:11px}
+#gameTopbar{flex-wrap:wrap}
+#gameButtons{width:100%;justify-content:flex-end}
+#searchInput{width:min(160px,45vw)}
+}
+
 .account-button{height:38px;padding:0 13px;border:1px solid rgba(160,32,240,.6);border-radius:8px;background:rgba(160,32,240,.15);color:var(--primary-light);cursor:pointer;font-family:Orbitron,sans-serif;font-size:10px;font-weight:700;white-space:nowrap}
 .account-button:hover{background:var(--primary);color:#fff}
 .account-modal{display:none;position:fixed;inset:0;z-index:1000000;background:rgba(0,0,0,.78);align-items:center;justify-content:center;padding:20px}
@@ -129,16 +119,18 @@ main{width:min(1152px,calc(100% - 32px));margin:0 auto;padding:96px 0 50px;posit
 .progress-note{margin-top:14px;padding:10px;border:1px solid var(--border);border-radius:7px;color:var(--muted);font-size:11px;line-height:1.45}
 </style>
 </head>
+
 <body>
 
 <header>
-<div class="logo">ResenhudoGames2</div>
+<div class="logo">RESENHUDOGAMES</div>
+
 <div class="header-actions">
 <div class="search-box">
 <span class="search-icon">⌕</span>
 <input id="searchInput" type="search" placeholder="Pesquisar jogos..." autocomplete="off">
 </div>
-<button id="homeButton" class="home-button" title="Início">🏠 Início</button>
+
 <button id="accountButton" class="account-button" type="button">ENTRAR</button>
 </div>
 </header>
@@ -146,614 +138,968 @@ main{width:min(1152px,calc(100% - 32px));margin:0 auto;padding:96px 0 50px;posit
 <main>
 
 <h1 class="page-title">Jogos</h1>
-<a class="comments-tab" href="#commentsSection">Aba de comentarios</a>
 
-<section class="top-games-section">
-    <h2 class="section-title">🔥 Mais Jogados</h2>
-    <div class="games-grid" id="topGamesGrid"></div>
-</section>
+<a class="comments-tab" href="#commentsSection">
+Aba de comentarios
+</a>
 
-<section class="catalogo-section">
-    <h2 class="catalogo-title">📚 Catálogo de Jogos</h2>
-    <div class="games-grid" id="gamesGrid"></div>
-</section>
+<section class="games-grid" id="gamesGrid"></section>
 
-<div id="noResults" class="no-results">Nenhum jogo encontrado.</div>
+<div id="noResults" class="no-results">
+Nenhum jogo encontrado.
+</div>
 
 <section class="credits">
+
 <h2 class="credits-title">Créditos</h2>
+
 <div class="credits-grid">
-<div class="credit"><p class="credit-game">Jogos</p><p class="credit-author">CaiobaGames</p></div>
-<div class="credit"><p class="credit-game">Jogos incorporados</p><p class="credit-author">Serviços e desenvolvedores originais</p></div>
+
+<div class="credit">
+<p class="credit-game">Jogos</p>
+<p class="credit-author">ResenhudoGames</p>
 </div>
+
+<div class="credit">
+<p class="credit-game">Jogos incorporados</p>
+<p class="credit-author">Serviços e desenvolvedores originais</p>
+</div>
+
+</div>
+
 </section>
 
 <section class="comments-section" id="commentsSection">
+
 <h2 class="comments-title">Comentários</h2>
+
 <form id="commentsForm" class="comments-form">
+
 <input id="commentName" type="text" maxlength="30" placeholder="Seu nome" required>
+
 <textarea id="commentText" maxlength="500" placeholder="Escreva um comentário..." required></textarea>
+
 <button type="submit">ENVIAR COMENTÁRIO</button>
+
 <div id="commentsStatus" class="comments-status"></div>
+
 </form>
+
 <div id="commentsList" class="comments-list"></div>
+
 </section>
 
 </main>
 
 <div id="accountModal" class="account-modal">
+
 <div class="account-box">
+
 <h2 id="accountTitle">Entrar</h2>
-<p class="account-subtitle">Entre ou crie sua conta para salvar seu progresso na nuvem.</p>
+
+<p class="account-subtitle">
+Entre ou crie sua conta para salvar seu progresso na nuvem.
+</p>
+
 <form id="accountForm" class="account-form">
-<input id="accountEmail" type="email" autocomplete="email" placeholder="E-mail" required>
-<input id="accountPassword" type="password" autocomplete="current-password" placeholder="Senha (mínimo de 6 caracteres)" minlength="6" required>
+
+<input
+id="accountEmail"
+type="email"
+autocomplete="email"
+placeholder="E-mail"
+required
+>
+
+<input
+id="accountPassword"
+type="password"
+autocomplete="current-password"
+placeholder="Senha (mínimo de 6 caracteres)"
+minlength="6"
+required
+>
+
 <div class="account-actions">
-<button type="submit" id="accountSubmit">ENTRAR</button>
-<button type="button" id="accountToggle">CRIAR CONTA</button>
-<button type="button" id="accountReset" onclick="abrirModoVisitante()">🔓 ESQUECI A SENHA</button>
-<button type="button" id="accountClose" class="account-close">FECHAR</button>
+
+<button type="submit" id="accountSubmit">
+ENTRAR
+</button>
+
+<button type="button" id="accountToggle">
+CRIAR CONTA
+</button>
+
+<button type="button" id="accountReset">
+ESQUECI A SENHA
+</button>
+
+<button type="button" id="accountClose" class="account-close">
+FECHAR
+</button>
+
 </div>
+
 <div id="accountStatus" class="account-status"></div>
+
 </form>
+
 <div id="accountLogged" style="display:none">
-<p class="account-subtitle">Conectado como <strong id="accountEmailLabel"></strong></p>
+
+<p class="account-subtitle">
+Conectado como <strong id="accountEmailLabel"></strong>
+</p>
+
 <div class="account-actions">
-<button type="button" id="logoutButton">SAIR</button>
-<button type="button" id="accountLoggedClose">FECHAR</button>
+
+<button type="button" id="logoutButton">
+SAIR
+</button>
+
+<button type="button" id="accountLoggedClose">
+FECHAR
+</button>
+
 </div>
-<div class="progress-note">A conta já está preparada para identificar o usuário pelo UID e salvar progresso no Firestore. O progresso dos jogos em si será ligado na próxima etapa.</div>
+
+<div class="progress-note">
+A conta já está preparada para identificar o usuário pelo UID e salvar progresso no Firestore. O progresso dos jogos em si será ligado na próxima etapa.
 </div>
+
 </div>
+
+</div>
+
 </div>
 
 <div id="gameOverlay">
+
 <div id="gameTopbar">
-<div id="gameTitle">Jogo</div>
+
+<div id="gameTitle">
+Jogo
+</div>
+
 <div id="gameButtons">
-<button type="button" id="favoriteButton">☆ Favoritar</button>
-<button type="button" id="fullscreenButton">⛶ Tela cheia</button>
-<button type="button" id="closeGameButton">✕ Fechar</button>
+
+<button type="button" id="favoriteButton">
+☆ Favoritar
+</button>
+
+<button type="button" id="fullscreenButton">
+⛶ Tela cheia
+</button>
+
+<button type="button" id="closeGameButton">
+✕ Fechar
+</button>
+
 </div>
+
 </div>
+
 <div id="gameContainer">
-<iframe id="gameFrame" title="Jogo" allow="fullscreen; autoplay; gamepad; pointer-lock" allowfullscreen></iframe>
-</div>
+
+<iframe
+id="gameFrame"
+title="Jogo"
+allow="fullscreen; autoplay; gamepad; pointer-lock"
+allowfullscreen>
+</iframe>
+
 </div>
 
-<!-- ===== MODO VISITANTE ===== -->
-<div id="guestOverlay">
-    <div id="guestTopbar">
-        <span id="guestTitle">🔍 Modo Visitante</span>
-        <div id="guestButtons">
-            <button id="guestFullscreenBtn">⛶ Tela cheia</button>
-            <button id="guestCloseBtn">✕ Fechar</button>
-        </div>
-    </div>
-    <div id="guestContainer">
-        <form id="guestSearchForm">
-            <input type="text" id="guestSearchInput" placeholder="Pesquisar..." autofocus>
-            <button type="submit" id="guestSearchBtn">🔍</button>
-            <button type="button" class="newtab-btn" id="guestOpenNewTabBtn" title="Abrir em nova aba">⬆️</button>
-        </form>
-        <iframe id="guestFrame" src="https://www.google.com/webhp?igu=1" allowfullscreen></iframe>
-    </div>
-</div>
-
-<!-- ===== MODAL DE CONFLITO ===== -->
-<div id="progressConflictModal">
-    <div class="modal-box">
-        <h2>⚡ Conflito de Progresso</h2>
-        <p class="desc">Encontramos dois progressos diferentes para este jogo. Qual você deseja usar?</p>
-        <div class="progress-info">
-            <strong>📁 Local</strong>
-            <p class="details" id="localProgressDetails">Pontuação: 0 | Recorde: 0 | Jogadas: 0</p>
-            <span class="timestamp" id="localTimestamp"></span>
-        </div>
-        <div class="progress-info">
-            <strong>☁️ Nuvem</strong>
-            <p class="details" id="cloudProgressDetails">Pontuação: 0 | Recorde: 0 | Jogadas: 0</p>
-            <span class="timestamp" id="cloudTimestamp"></span>
-        </div>
-        <div class="actions">
-            <button class="local-btn" id="useLocalBtn">📁 Usar Local</button>
-            <button class="cloud-btn" id="useCloudBtn">☁️ Usar Nuvem</button>
-        </div>
-    </div>
 </div>
 
 <script>
-// ==================== FUNÇÃO GLOBAL PARA ABRIR MODO VISITANTE ====================
-window.abrirModoVisitante = function() {
-    console.log('🔓 Função abrirModoVisitante chamada!');
-    
-    // Fecha o modal de login
-    const modal = document.getElementById('accountModal');
-    if (modal) modal.classList.remove('active');
-    
-    // Abre o Modo Visitante
-    const overlay = document.getElementById('guestOverlay');
-    if (overlay) {
-        overlay.classList.add('active');
-        const searchInput = document.getElementById('guestSearchInput');
-        if (searchInput) {
-            searchInput.value = '';
-            setTimeout(() => searchInput.focus(), 300);
-        }
-        const iframe = document.getElementById('guestFrame');
-        if (iframe) {
-            iframe.src = 'https://www.google.com/webhp?igu=1';
-        }
-        console.log('✅ Modo Visitante aberto com sucesso!');
-    } else {
-        alert('❌ Modo Visitante não encontrado!');
-        console.error('❌ Elemento #guestOverlay não existe.');
-    }
-};
 
-// ==================== LISTA DE JOGOS ====================
-const games = [
-  ['Rooftop Snipers 2','https://ducky443747.github.io/rooftopsnipers2/','https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=314,height=314,fit=cover,f=auto/895b299e7e49558ca383b23648314860/rooftop-snipers-2-logo.png','Tente vencer o seu oponete com precisão.'],
-  ['Rooftop Snipers','https://unblokedgames.github.io/projects/rooftop-snipers/index.html','https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=314,height=314,fit=cover,f=auto/c127771edb0e821e4109b7058ae3f094/rooftop-snipers-logo.jpeg','Tente vencer o seu oponete com precisão.'],
-  ['Escape Road','https://azgames.io/escape-road.embed','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4y1J2irNq60gr5ct0PXqHTwalaL5LtOOKbfJZ_h9LpA&s','Fuja pela cidade, desvie dos obstáculos e tente chegar o mais longe possível.'],
-  ['Wacky Flip','https://azgames.io/wacky-flip.embed','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6UK2b3FgT3MbfXqSy1f8FGJB-d4CoBAsrk2BGT20wRw&s','Faça acrobacias e tente acertar os movimentos no momento certo.'],
-  ['Bike Xtreme','https://azgames.io/bike-xtreme.embed','https://play-lh.googleusercontent.com/ZNlK83c8zKcUHOzgwcjDLYi8QIIbsEkdUmSMODovNPIxi_PiUKpgvFunmSPrc_8hyGPtahlIXbG7lREdJqlJ','Supere pistas radicais usando sua moto e mantenha o equilíbrio.'],
-  ['Undead Corridor','https://azgames.io/undead-corridor.embed','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqg5Un2gXFBAMXE2S8IcC0phmkxDSq8eiTroTTkfCzZmQMhurOVh09kvzD&s=10','Atravesse corredores cheios de desafios e tente sobreviver às fases.'],
-  ['Orbit Kick','https://azgames.io/orbit-kick.embed','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaTwUODsENC_R5VSXAIOteHI-K0DIW87BxeoLe6AoqvcdvP8Mt_DfG_6DK&s=10','Chute a bola e tente marcar gols usando ângulos e força.'],
-  ['Cowboy Safari','https://azgames.io/cowboy-safari.embed','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbXbkd7VXN5a2dF-Aj4cvLIYNnZ-vgUANhywWMa43Lafdjg5ppazjuNzy4&s=10','Explore uma aventura no estilo faroeste e supere os desafios do caminho.'],
-  ['Flip Spot','https://azgames.io/flip-spot.embed','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAJQxW7mERPlBtnL98zpqLamvjrk6ZmuPRtbNoSFbIaQ&s=10','Realize flips e tente completar os movimentos sem perder o controle.'],
-  ['Moto X3M','https://azgames.io/moto-x3m.embed','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3ySfO2VfEstWERnPVtWxw7LDn-qICA3aU9WIOHw0SirAjTbpdiLmJlJJl&s=10','Passe por pistas cheias de obstáculos, saltos e desafios radicais.'],
-  ['Drift Rush','https://azgames.io/drift-rush.embed','https://wackysteps.io/data/image/Drift-Rush.png','Faça curvas em alta velocidade e domine os drifts na pista.'],
-  ['Basketball Stars','https://azgames.io/basketball-stars.embed','https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/9c5a5477b6fcc030def9eaeb017ac0e0/basketball-superstars-logo.png','Entre em quadra e tente marcar mais pontos que seus adversários.'],
-  ['Dude Theft Auto','https://azgames.io/dude-theft-auto.embed','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzeLp6WCXNjSrdJeLzACRdpgodLs-MzPUda66H4jiiXg&s=10','Explore um mundo aberto em uma aventura cheia de situações malucas.'],
-  ['Paper.io','https://azgames.io/paper-io.embed','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKHXyjvcTI5HjVyC43RuESaH00YqrIdFn3Xxk_3sdCxg&s','Conquiste território, aumente sua área e evite deixar seu rastro exposto.'],
-  ['Ragdoll Hit Stickman','https://azgames.io/ragdoll-hit-stickman.embed','https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/3c892779be9dabb3589586c83ad3eeed/ragdoll-hit-logo.png','Use a física dos bonecos para superar os desafios das fases.'],
-  ['1v1.LOL','https://azgames.io/1v1lol.embed','https://topgames.gg/data/image/game/1v1-lol.png','Desafie outros jogadores em partidas rápidas e competitivas.'],
-  ['Narrow One','https://azgames.io/narrow-one.embed','https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/e9f87aed2de11520ecac587ffa98627d/narrow-one-logo.png','Partidas rápidas de equipes com estratégia e precisão.'],
-  ['Krunker','https://azgames.io/krunker.embed','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk7zhRekJ3JA5iGq1HS66l1Bx96MpDr9ZcjLrAQ9XzADS_c0zcS3Cifdg&s=10','Partidas online rápidas em mapas variados e competitivos.'],
-  ['Ragdoll Flip','https://azgames.io/ragdoll-flip.embed','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Tga4CdMJjzVv39-KYXiyw40pPNhUDwZ1uXNz6Aim7w&s=10','Faça o boneco girar e tente aterrissar corretamente.'],
-  ['Rocket Pult','https://rocketfortress.com/rocket-pult.embed','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaDpNGaCB950Wh8gFXrpfgkmnJvEKWo9SvfChzryfAPKw6zZn54cPxeh4h&s=10','Use lançamentos e física para alcançar a maior distância possível.'],
-  ['GunSpin','https://rocketfortress.com/gunspin.embed','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM3X823TmE8RyzMWcCzneMfXw5AGT9-mfzyqTXWntbvQ&s=10','Use a física do jogo para tentar alcançar grandes distâncias.'],
-  ['Zombie Strike','https://rocketfortress.com/zombie-strike.embed','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0R_77nnbuwM4pPGar4DY31_r2TavY3J-JaFyP1KRhg&s','Enfrente desafios em um cenário de ação com zumbis.'],
-  ['Counter Craft Sniper','https://rocketfortress.com/counter-craft-sniper.embed','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFDvUh5mqMrRlofmGUsCKD3MPW6Yu4UDS91Vc8zILZvg&s','Complete desafios de precisão em mapas inspirados em blocos.'],
-  ['Aliens Hunter','https://rocketfortress.com/aliens-hunter.embed','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXHt4Ycd6tt3-BRRUyTK7wu4rN7daKl9-8SYnV05vJVIaOwb6Ello3jtYB&s=10','Explore fases de ficção científica e enfrente desafios alienígenas.'],
-  ['Eagle Craft', 'https://db.duckmath.org/html/minecraft/index.html', 'https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/img/eagle-craft.jpg', 'Jogo sandbox inspirado no Minecraft. Explore, mine e construa em um mundo 3D de blocos. Modos sobrevivência e criativo.'],
-  ['Brawl Simulator 3D', 'https://playgama.com/export/game/brawl-simulator-3d?clid=p_660d5cb9-be70-4477-a140-595c21377514', 'https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/53453023-daf0-4f00-2938-5ac7867e6400/thumb', 'Simulador 3D de Brawl Stars no navegador. Lute em batalhas 3D, abra caixas e desbloqueie brawlers, skins e avatares.'],
-  ['Level Devil', 'https://leveldevilfull.com/play/level-devil/', 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3242750/header.jpg?t=1782835940', 'Plataforma enganador com 200 níveis desafiadores. Navegue por obstáculos e armadilhas escondidas. Modo local para 2 jogadores.'],
-  ['Chess Online', 'https://playgama.com/export/game/chess-online-playing?clid=p_660d5cb9-be70-4477-a140-595c21377514', 'https://playgama.com/cdn-cgi/imagedelivery/LN2S-4p3-GgZvEx3IPaKUA/8e33f23a-163a-4b62-353e-ba64f4fe2b00/thumb', 'Jogo de xadrez clássico no navegador. Jogue contra a IA ou multiplayer em tempo real. Múltiplos níveis de dificuldade.'],
-  ['GTA Vice City', 'https://quenq.com/apps/vice-city-online/', 'https://quenq.com/apps/vc-web/preview.jpg', 'Vice City Online traz a lendária experiência de mundo aberto de 1986 Miami diretamente para o navegador. Controle Tommy Vercetti enquanto constrói seu império criminoso.'],
-  ['Penalty Kicks', 'https://lemonarcade.com/gp/pgcdn/HTML5/PenaltyKicks/', 'https://www.primarygames.com/arcade/sports/penaltykicks/logo200.png', 'O jogo de futebol está empatado e depende de você vencer a grande partida. Você tem 15 tentativas para marcar o maior número de gols possível.'],
-  ['Ragdoll Soccer', 'https://playgama.com/export/game/ragdoll-soccer?clid=p_660d5cb9-be70-4477-a140-595c21377514', 'https://lemonarcade.com/img/pg/ragdoll-soccer.webp', 'Comande um jogador de futebol stick figure em partidas emocionantes. Inclui modo single player, multiplayer local, campeonato e disputas de pênaltis.'],
-  ['Punch Boxing Championship', 'https://y8.com/embed/punch_boxing_championship', 'https://img.y8.com/cloud/v2-y8-thumbs-big-thumbnails-001/97091/big.gif', 'Torne-se o campeão universal de boxe! Derrote todos os pesos pesados em três modos: Luta Rápida, Torneio e Carreira.'],
-  ['Red and Blue Snipers', 'https://playgama.com/export/game/red-and-blue-snipers?clid=p_660d5cb9-be70-4477-a140-595c21377514', 'https://lemonarcade.com/img/pg/red-and-blue-snipers.webp', 'Torne-se um verdadeiro sniper em vários mapas táticos. Inspire-se nos jogos de e-sports e aprimore sua precisão e compostura.'],
-  ['EdgeFire 2', 'https://playgama.com/export/game/edgefire-2-667e-1?clid=p_660d5cb9-be70-4477-a140-595c21377514', 'https://lemonarcade.com/img/pg/edgefire-2.webp', 'FPS de grande escala inspirado em Counter-Strike. Batalhas intensas em um universo tático com gráficos 3D e jogabilidade refinada.'],
-  ['Real COD Strike', 'https://playgama.com/export/game/real-cod-strike?clid=p_660d5cb9-be70-4477-a140-595c21377514', 'https://lemonarcade.com/img/pg/real-cod-strike.webp', 'Shooter de guerra moderna com combate intenso, missões explosivas e ação baseada em esquadrões. Precisão e reflexos são essenciais.'],
-  ['Stalker 2033: The Path of the Survivor', 'https://playgama.com/export/game/stalker-2033-the-path-of-the-survivor?clid=p_660d5cb9-be70-4477-a140-595c21377514', 'https://lemonarcade.com/img/pg/stalker-2033-the-path-of-the-survivor.webp', 'Atirador 3D em um mundo pós-apocalíptico. Enfrente os mortos-vivos, explore locais vastos, descubra segredos sombrios e lute para sobreviver.']
+const games=[
+
+['Escape Road',
+'https://azgames.io/escape-road.embed',
+'https://imgs.crazygames.com/escape-road-asm_16x9/20250724105031/escape-road-asm_16x9-cover?metadata=none&quality=100&width=1200&height=630&fit=crop',
+'Fuja pela cidade, desvie dos obstáculos e tente chegar o mais longe possível.'],
+
+['Wacky Flip',
+'https://azgames.io/wacky-flip.embed',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6UK2b3FgT3MbfXqSy1f8FGJB-d4CoBAsrk2BGT20wRw&s',
+'Faça acrobacias e tente acertar os movimentos no momento certo.'],
+
+['Bike Xtreme',
+'https://azgames.io/bike-xtreme.embed',
+'https://play-lh.googleusercontent.com/ZNlK83c8zKcUHOzgwcjDLYi8QIIbsEkdUmSMODovNPIxi_PiUKpgvFunmSPrc_8hyGPtahlIXbG7lREdJqlJ',
+'Supere pistas radicais usando sua moto e mantenha o equilíbrio.'],
+
+['Undead Corridor',
+'https://azgames.io/undead-corridor.embed',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqg5Un2gXFBAMXE2S8IcC0phmkxDSq8eiTroTTkfCzZmQMhurOVh09kvzD&s=10',
+'Atravesse corredores cheios de desafios e tente sobreviver às fases.'],
+
+['Orbit Kick',
+'https://azgames.io/orbit-kick.embed',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaTwUODsENC_R5VSXAIOteHI-K0DIW87BxeoLe6AoqvcdvP8Mt_DfG_6DK&s=10',
+'Chute a bola e tente marcar gols usando ângulos e força.'],
+
+['Cowboy Safari',
+'https://azgames.io/cowboy-safari.embed',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbXbkd7VXN5a2dF-Aj4cvLIYNnZ-vgUANhywWMa43Lafdjg5ppazjuNzy4&s=10',
+'Explore uma aventura no estilo faroeste e supere os desafios do caminho.'],
+
+['Flip Spot',
+'https://azgames.io/flip-spot.embed',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAJQxW7mERPlBtnL98zpqLamvjrk6ZmuPRtbNoSFbIaQ&s=10',
+'Realize flips e tente completar os movimentos sem perder o controle.'],
+
+['Moto X3M',
+'https://azgames.io/moto-x3m.embed',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3ySfO2VfEstWERnPVtWxw7LDn-qICA3aU9WIOHw0SirAjTbpdiLmJlJJl&s=10',
+'Passe por pistas cheias de obstáculos, saltos e desafios radicais.'],
+
+['Drift Rush',
+'https://azgames.io/drift-rush.embed',
+'https://wackysteps.io/data/image/Drift-Rush.png',
+'Faça curvas em alta velocidade e domine os drifts na pista.'],
+
+['Basketball Stars',
+'https://azgames.io/basketball-stars.embed',
+'https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/9c5a5477b6fcc030def9eaeb017ac0e0/basketball-superstars-logo.png',
+'Entre em quadra e tente marcar mais pontos que seus adversários.'],
+
+['Dude Theft Auto',
+'https://azgames.io/dude-theft-auto.embed',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzeLp6WCXNjSrdJeLzACRdpgodLs-MzPUda66H4jiiXg&s=10',
+'Explore um mundo aberto em uma aventura cheia de situações malucas.'],
+
+['Paper.io',
+'https://azgames.io/paper-io.embed',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKHXyjvcTI5HjVyC43RuESaH00YqrIdFn3Xxk_3sdCxg&s',
+'Conquiste território, aumente sua área e evite deixar seu rastro exposto.'],
+
+['Ragdoll Hit Stickman',
+'https://azgames.io/ragdoll-hit-stickman.embed',
+'https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/3c892779be9dabb3589586c83ad3eeed/ragdoll-hit-logo.png',
+'Use a física dos bonecos para superar os desafios das fases.'],
+
+['1v1.LOL',
+'https://azgames.io/1v1lol.embed',
+'https://topgames.gg/data/image/game/1v1-lol.png',
+'Desafie outros jogadores em partidas rápidas e competitivas.'],
+
+['Narrow One',
+'https://azgames.io/narrow-one.embed',
+'https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/e9f87aed2de11520ecac587ffa98627d/narrow-one-logo.png',
+'Partidas rápidas de equipes com estratégia e precisão.'],
+
+['Krunker',
+'https://azgames.io/krunker.embed',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk7zhRekJ3JA5iGq1HS66l1Bx96MpDr9ZcjLrAQ9XzADS_c0zcS3Cifdg&s=10',
+'Partidas online rápidas em mapas variados e competitivos.'],
+
+['Ragdoll Flip',
+'https://azgames.io/ragdoll-flip.embed',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Tga4CdMJjzVv39-KYXiyw40pPNhUDwZ1uXNz6Aim7w&s=10',
+'Faça o boneco girar e tente aterrissar corretamente.'],
+
+['Rocket Pult',
+'https://rocketfortress.com/rocket-pult.embed',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaDpNGaCB950Wh8gFXrpfgkmnJvEKWo9SvfChzryfAPKw6zZn54cPxeh4h&s=10',
+'Use lançamentos e física para alcançar a maior distância possível.'],
+
+['GunSpin',
+'https://rocketfortress.com/gunspin.embed',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM3X823TmE8RyzMWcCzneMfXw5AGT9-mfzyqTXWntbvQ&s=10',
+'Use a física do jogo para tentar alcançar grandes distâncias.'],
+
+['Zombie Strike',
+'https://rocketfortress.com/zombie-strike.embed',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0R_77nnbuwM4pPGar4DY31_r2TavY3J-JaFyP1KRhg&s',
+'Enfrente desafios em um cenário de ação com zumbis.'],
+
+['Counter Craft Sniper',
+'https://rocketfortress.com/counter-craft-sniper.embed',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFDvUh5mqMrRlofmGUsCKD3MPW6Yu4UDS91Vc8zILZvg&s',
+'Complete desafios de precisão em mapas inspirados em blocos.'],
+
+['Aliens Hunter',
+'https://rocketfortress.com/aliens-hunter.embed',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXHt4Ycd6tt3-BRRUyTK7wu4rN7daKl9-8SYnV05vJVIaOwb6Ello3jtYB&s=10',
+'Explore fases de ficção científica e enfrente desafios alienígenas.']
+
 ];
 
-const topGameNames = [
-  'Eagle Craft', 'Brawl Simulator 3D', 'Ragdoll Soccer', 'Undead Corridor',
-  'Rooftop Snipers', 'Rooftop Snipers 2', 'Rocket Pult', 'Punch Boxing Championship'
-];
+const grid=document.getElementById('gamesGrid');
 
-function renderGames(gridId, gameList) {
-  const grid = document.getElementById(gridId);
-  if (!grid) return;
-  grid.innerHTML = '';
-  gameList.forEach(g => {
-    const c = document.createElement('div');
-    c.className = 'game-card';
-    c.dataset.name = g[0];
-    c.dataset.url = g[1];
-    c.innerHTML = `<div class="game-cover"><img src="${g[2]}" alt="${g[0]}"></div><div class="game-info"><h2 class="game-name">${g[0]}</h2><p class="game-description">${g[3]}</p><div class="play-button">JOGAR</div></div>`;
-    grid.appendChild(c);
-  });
-}
+games.forEach(g=>{
 
-renderGames('gamesGrid', games);
-const topGames = games.filter(g => topGameNames.includes(g[0]));
-renderGames('topGamesGrid', topGames);
+const c=document.createElement('div');
 
-// ==================== SISTEMA DE PROGRESSO ====================
-function saveProgressLocal(gameName, data) {
-    try { localStorage.setItem('progress_' + gameName, JSON.stringify(data)); } catch(e) { console.error(e); }
-}
-function loadProgressLocal(gameName) {
-    try { const raw = localStorage.getItem('progress_' + gameName); if (raw) return JSON.parse(raw); } catch(e) { console.error(e); }
-    return null;
-}
-async function saveProgressCloud(uid, gameName, data) {
-    if (!uid || !window.db) return;
-    try {
-        const ref = doc(window.db, 'users', uid, 'progress', gameName);
-        await setDoc(ref, { ...data, updatedAt: data.updatedAt || new Date().toISOString() }, { merge: true });
-        return true;
-    } catch(e) { console.error(e); return false; }
-}
-async function loadProgressCloud(uid, gameName) {
-    if (!uid || !window.db) return null;
-    try {
-        const ref = doc(window.db, 'users', uid, 'progress', gameName);
-        const snap = await getDoc(ref);
-        if (snap.exists()) return snap.data();
-    } catch(e) { console.error(e); }
-    return null;
-}
-function resolveProgressConflict(gameName, localData, cloudData) {
-    return new Promise((resolve) => {
-        const modal = document.getElementById('progressConflictModal');
-        document.getElementById('localProgressDetails').textContent = `Pontuação: ${localData?.score || 0} | Recorde: ${localData?.highScore || 0} | Jogadas: ${localData?.totalPlays || 0}`;
-        document.getElementById('cloudProgressDetails').textContent = `Pontuação: ${cloudData?.score || 0} | Recorde: ${cloudData?.highScore || 0} | Jogadas: ${cloudData?.totalPlays || 0}`;
-        document.getElementById('localTimestamp').textContent = localData?.updatedAt ? `Última atualização: ${new Date(localData.updatedAt).toLocaleString()}` : 'Sem dados';
-        document.getElementById('cloudTimestamp').textContent = cloudData?.updatedAt ? `Última atualização: ${new Date(cloudData.updatedAt).toLocaleString()}` : 'Sem dados';
-        modal.classList.add('active');
-        const useLocal = document.getElementById('useLocalBtn');
-        const useCloud = document.getElementById('useCloudBtn');
-        const newLocal = useLocal.cloneNode(true);
-        const newCloud = useCloud.cloneNode(true);
-        useLocal.parentNode.replaceChild(newLocal, useLocal);
-        useCloud.parentNode.replaceChild(newCloud, useCloud);
-        newLocal.addEventListener('click', () => { modal.classList.remove('active'); resolve({ choice: 'local' }); });
-        newCloud.addEventListener('click', () => { modal.classList.remove('active'); resolve({ choice: 'cloud' }); });
-    });
-}
-async function loadProgressWithConflict(gameName) {
-    const localData = loadProgressLocal(gameName);
-    let cloudData = null;
-    if (window.currentUser) cloudData = await loadProgressCloud(window.currentUser.uid, gameName);
-    if (!localData && !cloudData) return null;
-    if (localData && !cloudData) return localData;
-    if (!localData && cloudData) return cloudData;
-    const localCopy = { ...localData }; delete localCopy.updatedAt;
-    const cloudCopy = { ...cloudData }; delete cloudCopy.updatedAt;
-    if (JSON.stringify(localCopy) === JSON.stringify(cloudCopy)) return localData;
-    const result = await resolveProgressConflict(gameName, localData, cloudData);
-    if (result.choice === 'local') {
-        if (window.currentUser) await saveProgressCloud(window.currentUser.uid, gameName, { ...localData, updatedAt: new Date().toISOString() });
-        return localData;
-    } else {
-        saveProgressLocal(gameName, cloudData);
-        return cloudData;
-    }
-}
+c.className='game-card';
 
-// ==================== EVENTOS DO OVERLAY ====================
-document.querySelectorAll('.game-card').forEach(card => {
-    card.addEventListener('click', async function() {
-        const name = this.dataset.name;
-        const url = this.dataset.url;
-        window.currentGameName = name;
-        document.getElementById('gameTitle').textContent = name;
-        document.getElementById('gameFrame').src = url;
-        document.getElementById('gameOverlay').classList.add('active');
-        const favBtn = document.getElementById('favoriteButton');
-        if (window.currentUser && window.currentUserFavorites?.has(name)) {
-            favBtn.textContent = '★ Favoritado';
-        } else {
-            favBtn.textContent = '☆ Favoritar';
-        }
-        const progress = await loadProgressWithConflict(name);
-        if (progress) {
-            document.getElementById('currentScore').textContent = progress.score || 0;
-            document.getElementById('highScore').textContent = progress.highScore || 0;
-            document.getElementById('totalPlays').textContent = progress.totalPlays || 0;
-        } else {
-            document.getElementById('currentScore').textContent = '0';
-            document.getElementById('highScore').textContent = '0';
-            document.getElementById('totalPlays').textContent = '0';
-        }
-    });
+c.dataset.name=g[0];
+
+c.dataset.url=g[1];
+
+c.innerHTML=`
+<div class="game-cover">
+<img src="${g[2]}" alt="${g[0]}">
+</div>
+<div class="game-info">
+<h2 class="game-name">${g[0]}</h2>
+<p class="game-description">${g[3]}</p>
+<div class="play-button">JOGAR</div>
+</div>`;
+
+grid.appendChild(c);
+
 });
 
-document.getElementById('closeGameButton').addEventListener('click', function() {
-    document.getElementById('gameOverlay').classList.remove('active');
-    document.getElementById('gameFrame').src = '';
-});
-
-document.getElementById('fullscreenButton').addEventListener('click', function() {
-    const container = document.getElementById('gameContainer');
-    if (container.requestFullscreen) container.requestFullscreen();
-    else if (container.webkitRequestFullscreen) container.webkitRequestFullscreen();
-});
-
-document.getElementById('favoriteButton').addEventListener('click', async function() {
-    const gameName = document.getElementById('gameTitle').textContent;
-    if (!window.currentUser) { alert('Faça login para favoritar jogos!'); return; }
-    if (!window.currentUserFavorites) window.currentUserFavorites = new Set();
-    if (window.currentUserFavorites.has(gameName)) {
-        window.currentUserFavorites.delete(gameName);
-        this.textContent = '☆ Favoritar';
-        alert('⭐ "' + gameName + '" removido dos favoritos!');
-    } else {
-        window.currentUserFavorites.add(gameName);
-        this.textContent = '★ Favoritado';
-        alert('⭐ "' + gameName + '" favoritado!');
-    }
-    try {
-        await setDoc(doc(window.db, 'users', window.currentUser.uid), {
-            favorites: Array.from(window.currentUserFavorites),
-            updatedAt: serverTimestamp()
-        }, { merge: true });
-    } catch(e) { console.error('Erro ao salvar favoritos:', e); }
-});
-
-document.getElementById('saveProgressBtn').addEventListener('click', async function() {
-    const gameName = window.currentGameName;
-    if (!gameName) { alert('Nenhum jogo aberto.'); return; }
-    const currentScoreEl = document.getElementById('currentScore');
-    const highScoreEl = document.getElementById('highScore');
-    const totalPlaysEl = document.getElementById('totalPlays');
-    let currentScore = parseInt(currentScoreEl.textContent) || 0;
-    if (currentScore === 0) {
-        currentScore = Math.floor(Math.random() * 500) + 50;
-        currentScoreEl.textContent = currentScore;
-    }
-    const highScore = parseInt(highScoreEl.textContent) || 0;
-    const totalPlays = parseInt(totalPlaysEl.textContent) || 0;
-    const newHighScore = Math.max(currentScore, highScore);
-    const data = {
-        score: currentScore,
-        highScore: newHighScore,
-        totalPlays: totalPlays + 1,
-        updatedAt: new Date().toISOString()
-    };
-    saveProgressLocal(gameName, data);
-    highScoreEl.textContent = newHighScore;
-    totalPlaysEl.textContent = totalPlays + 1;
-    if (window.currentUser) {
-        const saved = await saveProgressCloud(window.currentUser.uid, gameName, data);
-        if (saved) alert(currentScore > highScore ? '🏆 NOVO RECORDE! Salvo na nuvem ✅' : '💾 Progresso salvo na nuvem ✅');
-        else alert('💾 Progresso salvo localmente (erro na nuvem).');
-    } else {
-        alert('💾 Progresso salvo localmente (faça login para sincronizar).');
-    }
-});
-
-document.getElementById('homeButton').addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// ==================== MODO VISITANTE (Controles) ====================
-document.getElementById('guestCloseBtn').addEventListener('click', function() {
-    document.getElementById('guestOverlay').classList.remove('active');
-    document.getElementById('guestFrame').src = 'https://www.google.com/webhp?igu=1';
-});
-
-document.getElementById('guestSearchForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const query = document.getElementById('guestSearchInput').value.trim();
-    if (!query) { alert('Digite algo para pesquisar!'); return; }
-    const searchUrl = 'https://www.google.com/search?igu=1&q=' + encodeURIComponent(query);
-    document.getElementById('guestFrame').src = searchUrl;
-    document.getElementById('guestSearchInput').value = '';
-});
-
-document.getElementById('guestOpenNewTabBtn').addEventListener('click', function() {
-    const query = document.getElementById('guestSearchInput').value.trim();
-    if (!query) { alert('Digite algo para pesquisar!'); return; }
-    const searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(query);
-    window.open(searchUrl, '_blank');
-    document.getElementById('guestSearchInput').value = '';
-});
-
-document.getElementById('guestFullscreenBtn').addEventListener('click', function() {
-    const container = document.getElementById('guestContainer');
-    if (container.requestFullscreen) container.requestFullscreen();
-    else if (container.webkitRequestFullscreen) container.webkitRequestFullscreen();
-});
-
-// ==================== PESQUISA DE JOGOS ====================
-document.getElementById('searchInput').addEventListener('input', function() {
-    const term = this.value.toLowerCase();
-    document.querySelectorAll('#gamesGrid .game-card').forEach(card => {
-        const name = card.dataset.name.toLowerCase();
-        card.classList.toggle('hidden', !name.includes(term));
-    });
-});
-
-// ==================== COMENTÁRIOS ====================
-document.querySelector('.comments-tab').addEventListener('click', function(e) {
-    e.preventDefault();
-    document.getElementById('commentsSection').scrollIntoView({ behavior: 'smooth' });
-});
-
-// ==================== ESC FECHA O JOGO ====================
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        document.getElementById('gameOverlay').classList.remove('active');
-        document.getElementById('gameFrame').src = '';
-    }
-});
-
-console.log('✅ Site carregado. Clique em "ENTRAR" > "ESQUECI A SENHA" para abrir o Modo Visitante.');
 </script>
 
 <script type="module">
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js';
-import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp, doc, setDoc, getDoc } from 'https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js';
 
-const firebaseConfig = {
-    apiKey: 'AIzaSyDptzzLZYWBlTQ1eoIJIQClFc2PKiDNRh0',
-    authDomain: 'caioba-games-comentarios.firebaseapp.com',
-    projectId: 'caioba-games-comentarios',
-    storageBucket: 'caioba-games-comentarios.firebasestorage.app',
-    messagingSenderId: '340825138509',
-    appId: '1:340825138509:web:2a8eb0c467897d64f2c304',
-    measurementId: 'G-ST621MWSDD'
+import{
+initializeApp
+}from'https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js';
+
+import{
+getAuth,
+createUserWithEmailAndPassword,
+signInWithEmailAndPassword,
+sendPasswordResetEmail,
+signOut,
+onAuthStateChanged,
+signInAnonymously
+}from'https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js';
+
+import{
+getFirestore,
+collection,
+addDoc,
+query,
+orderBy,
+onSnapshot,
+serverTimestamp,
+doc,
+setDoc,
+getDoc
+}from'https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js';
+
+
+const firebaseConfig={
+apiKey:'AIzaSyDptzzLZYWBlTQ1eoIJIQClFc2PKiDNRh0',
+authDomain:'caioba-games-comentarios.firebaseapp.com',
+projectId:'caioba-games-comentarios',
+storageBucket:'caioba-games-comentarios.firebasestorage.app',
+messagingSenderId:'340825138509',
+appId:'1:340825138509:web:2a8eb0c467897d64f2c304',
+measurementId:'G-ST621MWSDD'
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
 
-window.db = db;
-window.auth = auth;
-window.currentUser = null;
-window.currentUserFavorites = new Set();
+const app=initializeApp(firebaseConfig),
+auth=getAuth(app),
+db=getFirestore(app);
 
-async function loadFavorites(uid) {
-    try {
-        const docSnap = await getDoc(doc(db, 'users', uid));
-        if (docSnap.exists()) {
-            const data = docSnap.data();
-            if (data.favorites) window.currentUserFavorites = new Set(data.favorites);
-        }
-    } catch(e) { console.error('Erro ao carregar favoritos:', e); }
+
+const form=document.getElementById('commentsForm'),
+nameInput=document.getElementById('commentName'),
+textInput=document.getElementById('commentText'),
+list=document.getElementById('commentsList'),
+status=document.getElementById('commentsStatus');
+
+
+function render(s){
+
+list.innerHTML='';
+
+s.forEach(d=>{
+
+const x=d.data(),
+a=document.createElement('article'),
+n=document.createElement('h3'),
+p=document.createElement('p');
+
+a.className='comment';
+n.className='comment-name';
+p.className='comment-text';
+
+n.textContent=x.name||'Anônimo';
+p.textContent=x.comment||'';
+
+a.append(n,p);
+
+list.appendChild(a);
+
+});
+
 }
 
-onAuthStateChanged(auth, async (user) => {
-    if (user) {
-        window.currentUser = user;
-        document.getElementById('accountButton').textContent = user.email.split('@')[0];
-        document.getElementById('accountButton').style.color = '#00ff88';
-        document.getElementById('accountLogged').style.display = 'block';
-        document.getElementById('accountEmailLabel').textContent = user.email;
-        document.querySelector('.account-form').style.display = 'none';
-        document.getElementById('accountTitle').textContent = '✅ Conectado';
-        document.getElementById('accountStatus').textContent = '✅ Logado com sucesso!';
-        document.getElementById('accountStatus').style.color = '#00ff88';
-        await loadFavorites(user.uid);
-    } else {
-        window.currentUser = null;
-        window.currentUserFavorites = new Set();
-        document.getElementById('accountButton').textContent = 'ENTRAR';
-        document.getElementById('accountButton').style.color = '';
-        document.querySelector('.account-form').style.display = 'grid';
-        document.getElementById('accountLogged').style.display = 'none';
-        document.getElementById('accountTitle').textContent = 'Entrar';
-        document.getElementById('accountStatus').textContent = '';
-    }
+
+async function startComments(){
+
+try{
+
+const q=query(
+collection(db,'comments'),
+orderBy('createdAt','desc')
+);
+
+onSnapshot(q,render,e=>{
+
+console.error(e);
+
+status.textContent='Não foi possível carregar os comentários.';
+
 });
 
-document.getElementById('accountForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const email = document.getElementById('accountEmail').value;
-    const password = document.getElementById('accountPassword').value;
-    const status = document.getElementById('accountStatus');
-    const isCreating = document.getElementById('accountToggle').textContent === 'VOLTAR';
-    try {
-        if (isCreating) {
-            await createUserWithEmailAndPassword(auth, email, password);
-            status.textContent = '✅ Conta criada com sucesso!';
-            status.style.color = '#00ff88';
-        } else {
-            await signInWithEmailAndPassword(auth, email, password);
-            status.textContent = '✅ Login realizado!';
-            status.style.color = '#00ff88';
-        }
-        setTimeout(() => { document.getElementById('accountModal').classList.remove('active'); }, 1500);
-    } catch(error) {
-        status.textContent = '❌ ' + error.message;
-        status.style.color = '#ff4444';
-    }
+
+form.addEventListener('submit',async e=>{
+
+e.preventDefault();
+
+const name=nameInput.value.trim(),
+comment=textInput.value.trim();
+
+if(!name||!comment)return;
+
+status.textContent='Enviando...';
+
+try{
+
+await addDoc(collection(db,'comments'),{
+name,
+comment,
+createdAt:serverTimestamp()
 });
 
-document.getElementById('logoutButton').addEventListener('click', async function() {
-    try {
-        await signOut(auth);
-        document.getElementById('accountStatus').textContent = '👋 Desconectado!';
-        document.getElementById('accountStatus').style.color = '#ffd700';
-        setTimeout(() => { document.getElementById('accountModal').classList.remove('active'); }, 1000);
-    } catch(error) {
-        alert('Erro ao sair: ' + error.message);
-    }
+form.reset();
+
+status.textContent='Comentário enviado!';
+
+}catch(err){
+
+console.error(err);
+
+status.textContent='Não foi possível enviar o comentário.';
+
+}
+
 });
 
-document.getElementById('accountToggle').addEventListener('click', function() {
-    const submit = document.getElementById('accountSubmit');
-    const title = document.getElementById('accountTitle');
-    const status = document.getElementById('accountStatus');
-    if (this.textContent === 'CRIAR CONTA') {
-        this.textContent = 'VOLTAR';
-        submit.textContent = 'CRIAR CONTA';
-        title.textContent = 'Criar Conta';
-        status.textContent = 'Preencha os dados para criar sua conta.';
-        status.style.color = '#aaa0b3';
-    } else {
-        this.textContent = 'CRIAR CONTA';
-        submit.textContent = 'ENTRAR';
-        title.textContent = 'Entrar';
-        status.textContent = '';
-    }
+}catch(e){
+
+console.error(e);
+
+status.textContent='Não foi possível conectar aos comentários.';
+
+}
+
+}
+
+
+const accountButton=document.getElementById('accountButton'),
+accountModal=document.getElementById('accountModal'),
+accountForm=document.getElementById('accountForm'),
+accountEmail=document.getElementById('accountEmail'),
+accountPassword=document.getElementById('accountPassword'),
+accountStatus=document.getElementById('accountStatus'),
+accountTitle=document.getElementById('accountTitle'),
+accountSubmit=document.getElementById('accountSubmit'),
+accountToggle=document.getElementById('accountToggle'),
+accountReset=document.getElementById('accountReset'),
+accountClose=document.getElementById('accountClose'),
+accountLogged=document.getElementById('accountLogged'),
+accountEmailLabel=document.getElementById('accountEmailLabel'),
+logoutButton=document.getElementById('logoutButton'),
+accountLoggedClose=document.getElementById('accountLoggedClose');
+
+
+let signupMode=false;
+
+
+function openAccount(){
+
+const user=auth.currentUser,
+accountUser=user&&!user.isAnonymous;
+
+accountModal.classList.add('active');
+
+accountStatus.textContent='';
+
+accountForm.style.display=accountUser?'none':'grid';
+
+accountLogged.style.display=accountUser?'block':'none';
+
+if(accountUser)
+accountEmailLabel.textContent=user.email||'Usuário';
+
+updateAccountUI(accountUser?user:null);
+
+}
+
+
+function closeAccount(){
+
+accountModal.classList.remove('active');
+
+}
+
+
+function updateAccountUI(user){
+
+if(user){
+
+accountButton.textContent='CONTA';
+
+accountEmailLabel.textContent=user.email||'Usuário';
+
+}else{
+
+accountButton.textContent='ENTRAR';
+
+}
+
+}
+
+
+accountButton.onclick=openAccount;
+
+accountClose.onclick=closeAccount;
+
+accountLoggedClose.onclick=closeAccount;
+
+accountModal.addEventListener('click',e=>{
+
+if(e.target===accountModal)
+closeAccount();
+
 });
 
-// O botão "ESQUECI A SENHA" agora usa onclick no HTML
-// A função original de recuperação de senha está comentada abaixo
-/*
-document.getElementById('accountReset').addEventListener('click', function() {
-    const email = document.getElementById('accountEmail').value;
-    const status = document.getElementById('accountStatus');
-    if (!email) {
-        status.textContent = '❌ Digite seu e-mail primeiro!';
-        status.style.color = '#ff4444';
-        return;
-    }
-    sendPasswordResetEmail(auth, email)
-        .then(() => {
-            status.textContent = '📧 Link de recuperação enviado para ' + email;
-            status.style.color = '#ffd700';
-        })
-        .catch((error) => {
-            status.textContent = '❌ ' + error.message;
-            status.style.color = '#ff4444';
-        });
-});
-*/
 
-document.getElementById('accountClose').addEventListener('click', function() {
-    document.getElementById('accountModal').classList.remove('active');
-});
-document.getElementById('accountLoggedClose').addEventListener('click', function() {
-    document.getElementById('accountModal').classList.remove('active');
-});
-document.getElementById('accountModal').addEventListener('click', function(e) {
-    if (e.target === this) this.classList.remove('active');
-});
-document.getElementById('accountButton').addEventListener('click', function() {
-    document.getElementById('accountModal').classList.add('active');
+accountToggle.onclick=()=>{
+
+signupMode=!signupMode;
+
+accountTitle.textContent=signupMode?'Criar conta':'Entrar';
+
+accountSubmit.textContent=signupMode?'CRIAR CONTA':'ENTRAR';
+
+accountToggle.textContent=signupMode?'JÁ TENHO CONTA':'CRIAR CONTA';
+
+accountStatus.textContent='';
+
+};
+
+
+accountForm.addEventListener('submit',async e=>{
+
+e.preventDefault();
+
+const email=accountEmail.value.trim(),
+password=accountPassword.value;
+
+if(!email||password.length<6)return;
+
+accountStatus.textContent=signupMode?'Criando conta...':'Entrando...';
+
+try{
+
+if(signupMode){
+
+await createUserWithEmailAndPassword(
+auth,
+email,
+password
+);
+
+accountStatus.textContent='Conta criada!';
+
+}else{
+
+await signInWithEmailAndPassword(
+auth,
+email,
+password
+);
+
+accountStatus.textContent='Login realizado!';
+
+}
+
+accountForm.reset();
+
+setTimeout(closeAccount,500);
+
+}catch(err){
+
+console.error(err);
+
+const map={
+
+'auth/email-already-in-use':'Este e-mail já está cadastrado.',
+
+'auth/invalid-credential':'E-mail ou senha incorretos.',
+
+'auth/invalid-email':'Digite um e-mail válido.',
+
+'auth/weak-password':'A senha precisa ter pelo menos 6 caracteres.',
+
+'auth/too-many-requests':'Muitas tentativas. Tente novamente mais tarde.'
+
+};
+
+accountStatus.textContent=
+map[err.code]||
+'Não foi possível concluir a operação.';
+
+}
+
 });
 
-document.getElementById('commentsForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const name = document.getElementById('commentName').value.trim();
-    const text = document.getElementById('commentText').value.trim();
-    const status = document.getElementById('commentsStatus');
-    if (!name || !text) {
-        status.textContent = '❌ Preencha todos os campos!';
-        status.style.color = '#ff4444';
-        return;
-    }
-    try {
-        await addDoc(collection(db, 'comments'), { name, comment: text, timestamp: serverTimestamp() });
-        document.getElementById('commentName').value = '';
-        document.getElementById('commentText').value = '';
-        status.textContent = '✅ Comentário enviado!';
-        status.style.color = '#00ff88';
-    } catch(e) {
-        status.textContent = '❌ Erro ao enviar comentário. Tente novamente.';
-        status.style.color = '#ff4444';
-        console.error('Erro ao enviar comentário:', e);
-    }
+
+accountReset.onclick=async()=>{
+
+const email=accountEmail.value.trim();
+
+if(!email){
+
+accountStatus.textContent='Digite seu e-mail primeiro.';
+
+return;
+
+}
+
+try{
+
+await sendPasswordResetEmail(auth,email);
+
+accountStatus.textContent='E-mail de redefinição enviado!';
+
+}catch(err){
+
+console.error(err);
+
+accountStatus.textContent='Não foi possível enviar o e-mail de redefinição.';
+
+}
+
+};
+
+
+logoutButton.onclick=async()=>{
+
+await signOut(auth);
+
+await signInAnonymously(auth);
+
+closeAccount();
+
+};
+
+
+onAuthStateChanged(auth,user=>{
+
+const realUser=user&&!user.isAnonymous;
+
+updateAccountUI(realUser?user:null);
+
+if(realUser)
+prepareUserProgress(user.uid);
+
 });
 
-onSnapshot(query(collection(db, 'comments'), orderBy('timestamp', 'desc')), (snapshot) => {
-    const list = document.getElementById('commentsList');
-    if (snapshot.empty) {
-        list.innerHTML = '<div class="comment" style="text-align:center;color:var(--muted);">Nenhum comentário ainda. Seja o primeiro!</div>';
-        return;
-    }
-    list.innerHTML = '';
-    snapshot.forEach(doc => {
-        const data = doc.data();
-        const div = document.createElement('div');
-        div.className = 'comment';
-        div.innerHTML = `<p class="comment-name">${data.name || 'Anônimo'}</p><p class="comment-text">${data.comment || ''}</p>`;
-        list.appendChild(div);
-    });
-}, (error) => { console.error('Erro ao carregar comentários:', error); });
 
-console.log('✅ Firebase conectado e sincronização de progresso ativa!');
+async function prepareUserProgress(uid){
+
+const ref=doc(db,'users',uid);
+
+const snap=await getDoc(ref).catch(()=>null);
+
+if(!snap||!snap.exists()){
+
+await setDoc(
+ref,
+{createdAt:serverTimestamp()},
+{merge:true}
+).catch(console.error);
+
+}
+
+}
+
+
+/* API DE PROGRESSO DO RESENHUDOGAMES */
+
+window.ResenhudoProgress={
+
+async save(gameId,data){
+
+const user=auth.currentUser;
+
+if(!user||user.isAnonymous)
+throw new Error('LOGIN_REQUIRED');
+
+await setDoc(
+
+doc(
+db,
+'users',
+user.uid,
+'progress',
+gameId
+),
+
+{
+data,
+updatedAt:serverTimestamp()
+},
+
+{merge:true}
+
+);
+
+},
+
+async load(gameId){
+
+const user=auth.currentUser;
+
+if(!user||user.isAnonymous)
+throw new Error('LOGIN_REQUIRED');
+
+const snap=await getDoc(
+
+doc(
+db,
+'users',
+user.uid,
+'progress',
+gameId
+)
+
+);
+
+return snap.exists()
+?(snap.data().data??null)
+:null;
+
+}
+
+};
+
+
+async function ensureCommentAuth(){
+
+if(!auth.currentUser)
+await signInAnonymously(auth);
+
+}
+
+
+ensureCommentAuth();
+
+startComments();
+
 </script>
+
+
+<script>
+
+document.addEventListener('DOMContentLoaded',()=>{
+
+const overlay=document.getElementById('gameOverlay'),
+frame=document.getElementById('gameFrame'),
+title=document.getElementById('gameTitle'),
+close=document.getElementById('closeGameButton'),
+full=document.getElementById('fullscreenButton'),
+fav=document.getElementById('favoriteButton'),
+search=document.getElementById('searchInput'),
+none=document.getElementById('noResults');
+
+let current=null;
+
+
+const cards=()=>[
+...document.querySelectorAll('.game-card')
+];
+
+
+function open(card){
+
+current={
+url:card.dataset.url,
+name:card.dataset.name
+};
+
+title.textContent=current.name;
+
+frame.src=current.url;
+
+overlay.classList.add('active');
+
+document.body.style.overflow='hidden';
+
+updateFav();
+
+}
+
+
+function closeGame(){
+
+if(document.fullscreenElement)
+document.exitFullscreen().catch(()=>{});
+
+overlay.classList.remove('active');
+
+frame.src='about:blank';
+
+document.body.style.overflow='';
+
+}
+
+
+function updateFav(){
+
+if(!current)return;
+
+const s=
+localStorage.getItem(
+'resenhudogames-favorite-'+current.url
+)==='true';
+
+fav.textContent=
+s?'★ Favoritado':'☆ Favoritar';
+
+}
+
+
+function toggleFull(){
+
+if(document.fullscreenElement){
+
+document.exitFullscreen();
+
+return;
+
+}
+
+if(frame.requestFullscreen)
+
+frame.requestFullscreen()
+.catch(()=>{
+overlay.requestFullscreen().catch(()=>{});
+});
+
+else
+
+overlay.requestFullscreen().catch(()=>{});
+
+}
+
+
+new MutationObserver(()=>{
+
+cards().forEach(c=>{
+
+c.onclick=()=>open(c);
+
+});
+
+}).observe(
+document.getElementById('gamesGrid'),
+{childList:true}
+);
+
+
+cards().forEach(c=>{
+
+c.onclick=()=>open(c);
+
+});
+
+
+close.onclick=closeGame;
+
+full.onclick=toggleFull;
+
+
+fav.onclick=()=>{
+
+if(!current)return;
+
+const k=
+'resenhudogames-favorite-'+current.url;
+
+const s=
+localStorage.getItem(k)==='true';
+
+localStorage.setItem(
+k,
+String(!s)
+);
+
+updateFav();
+
+};
+
+
+document.addEventListener(
+'fullscreenchange',
+()=>{
+
+full.textContent=
+document.fullscreenElement
+?'⛶ Sair da tela cheia'
+:'⛶ Tela cheia';
+
+}
+);
+
+
+search.addEventListener('input',()=>{
+
+const t=
+search.value.trim().toLowerCase();
+
+let n=0;
+
+cards().forEach(c=>{
+
+const ok=
+!t||
+(c.dataset.name||'')
+.toLowerCase()
+.includes(t);
+
+c.classList.toggle(
+'hidden',
+!ok
+);
+
+if(ok)n++;
+
+});
+
+none.style.display=n?'none':'block';
+
+});
+
+
+document.addEventListener('keydown',e=>{
+
+if(
+e.key==='Escape'&&
+overlay.classList.contains('active')&&
+!document.fullscreenElement
+)
+
+closeGame();
+
+});
+
+});
+
+</script>
+
 </body>
 </html>
