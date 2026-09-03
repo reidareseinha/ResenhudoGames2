@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="Xkur-aTK-wA1bBSZcmpaApJt_IPlR0WXUNOYWBv3atQ" />
+
+<!-- SEO ResenhudoGames -->
+<meta name="description" content="ResenhudoGames é um catálogo de jogos online para jogar diretamente pelo navegador.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://resenhudo-games.web.app/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ResenhudoGames">
+<meta property="og:title" content="ResenhudoGames">
+<meta property="og:description" content="Jogos online para jogar diretamente pelo navegador no ResenhudoGames.">
+<meta property="og:url" content="https://resenhudo-games.web.app/">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ResenhudoGames">
+<meta name="twitter:description" content="Jogos online para jogar diretamente pelo navegador no ResenhudoGames.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "ResenhudoGames",
+  "alternateName": "Resenhudo Games",
+  "url": "https://resenhudo-games.web.app/",
+  "inLanguage": "pt-BR",
+  "description": "ResenhudoGames é um catálogo de jogos online para jogar diretamente pelo navegador."
+}
+</script>
+<!-- /SEO ResenhudoGames -->
+
+<title>Início - Sala de Aula</title>
+<link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{--background:#050506;--card:#100b1c;--foreground:#f4f0f7;--muted:#aaa0b3;--primary:#a020f0;--primary-light:#c45cff;--border:rgba(160,32,240,.25)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100%;background:radial-gradient(circle at 50% -20%,rgba(160,32,240,.16),transparent 45%),var(--background);color:var(--foreground);font-family:Inter,sans-serif}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:50px 50px}
+
+header{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 32px;background:rgba(5,5,8,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(160,32,240,.2);z-index:100}
+.logo{color:var(--primary-light);font-family:Orbitron,sans-serif;font-size:20px;font-weight:700;letter-spacing:.12em;text-shadow:0 0 5px var(--primary),0 0 10px var(--primary),0 0 20px var(--primary-light);white-space:nowrap}
+.header-actions{display:flex;align-items:center;gap:10px}
+.search-box{position:relative;display:flex;align-items:center}
+.search-icon{position:absolute;left:11px;color:var(--primary-light);pointer-events:none;font-size:18px}
+#searchInput{width:220px;height:38px;padding:0 12px 0 34px;border:1px solid var(--border);border-radius:8px;outline:0;background:rgba(16,11,28,.9);color:#fff;font-family:Inter,sans-serif}
+#searchInput:focus{border-color:var(--primary-light);box-shadow:0 0 12px rgba(160,32,240,.15)}
+
+main{width:min(1152px,calc(100% - 32px));margin:0 auto;padding:96px 0 50px;position:relative;z-index:2}
+.page-title{margin:0 0 20px;font-family:Orbitron,sans-serif;font-size:28px}
+.comments-tab{display:inline-flex;align-items:center;gap:8px;margin:0 0 24px;padding:10px 16px;width:fit-content;text-decoration:none;color:var(--primary-light);background:rgba(16,11,28,.7);border:1px solid var(--border);border-radius:8px;font-family:Orbitron,sans-serif;font-size:12px;font-weight:700}
+.comments-tab:hover{border-color:rgba(196,92,255,.7);background:rgba(160,32,240,.15)}
+
+.games-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:22px;align-items:stretch}
+.game-card{cursor:pointer;display:flex;flex-direction:column;width:100%;min-width:0;height:100%;overflow:hidden;color:var(--foreground);text-decoration:none;background:rgba(16,11,28,.9);border:1px solid var(--border);border-radius:10px;transition:transform .2s,border-color .2s,box-shadow .2s}
+.game-card:hover{transform:translateY(-4px);border-color:rgba(196,92,255,.7);box-shadow:0 0 20px rgba(160,32,240,.18)}
+.game-card.hidden{display:none}
+.game-cover{width:100%;height:180px;flex-shrink:0;overflow:hidden;background:#0b080f}
+.game-cover img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .3s}
+.game-card:hover .game-cover img{transform:scale(1.04)}
+.game-info{display:flex;flex-direction:column;flex:1;padding:14px}
+.game-name{margin:0 0 7px;font-family:Orbitron,sans-serif;font-size:15px;line-height:1.25;color:#fff}
+.game-description{margin:0;flex:1;color:var(--muted);font-size:12px;line-height:1.4}
+.play-button{margin-top:12px;padding:9px;text-align:center;border-radius:6px;background:rgba(160,32,240,.15);border:1px solid rgba(160,32,240,.4);color:var(--primary-light);font-family:Orbitron,sans-serif;font-size:11px;font-weight:700}
+.game-card:hover .play-button{background:var(--primary);color:#fff}
+.no-results{display:none;margin-top:20px;padding:18px;color:var(--muted);text-align:center;border:1px solid var(--border);border-radius:8px;background:rgba(16,11,28,.7)}
+
+.credits,.comments-section{margin-top:55px;padding-top:28px;border-top:1px solid rgba(160,32,240,.2)}
+.credits-title,.comments-title{margin:0 0 18px;font-family:Orbitron,sans-serif;font-size:20px}
+.credits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.credit{padding:14px;background:rgba(16,11,28,.7);border:1px solid var(--border);border-radius:8px}
+.credit-game{margin:0 0 5px;font-weight:600}
+.credit-author{margin:0;color:var(--muted);font-size:13px}
+
+.comments-form{display:grid;gap:10px;margin-bottom:24px}
+.comments-form input,.comments-form textarea{width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:7px;outline:0;background:rgba(16,11,28,.9);color:#fff;font-family:Inter,sans-serif}
+.comments-form textarea{min-height:100px;resize:vertical}
+.comments-form input:focus,.comments-form textarea:focus{border-color:var(--primary-light);box-shadow:0 0 12px rgba(160,32,240,.12)}
+.comments-form button{width:fit-content;padding:10px 16px;border:1px solid rgba(160,32,240,.6);border-radius:7px;background:rgba(160,32,240,.15);color:var(--primary-light);cursor:pointer;font-family:Orbitron,sans-serif;font-size:11px;font-weight:700}
+.comments-form button:hover{background:var(--primary);color:#fff}
+.comments-status{min-height:18px;color:var(--muted);font-size:12px}
+.comments-list{
